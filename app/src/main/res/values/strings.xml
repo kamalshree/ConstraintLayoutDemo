@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ConstraintLayoutDemo</string>
+    <string name="header_image">Header Image</string>
+    <string name="poster_image">Poster Image</string>
+    <string name="wonder_women">Wonder Women</string>
+    <string name="march_2017_pg_129_minutes">March 2017 PG 129 Minutes</string>
+    <string name="rent_for_350">Rent for 350</string>
+    <string name="buy_from_999">Buy from 999</string>
+    <string name="play_button">play button</string>
+    <string name="rating">Rating</string>
+    <string name="share">Share</string>
+    <string name="group">Group</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="movie_desc">Before she was Wonder Woman (Gal Gadot), she was Diana, princess of the Amazons, trained to be an unconquerable warrior. Raised on a sheltered island paradise, Diana meets an American pilot (Chris Pine) who tells her about the massive conflict that\'s raging in the outside world.</string>
+</resources>

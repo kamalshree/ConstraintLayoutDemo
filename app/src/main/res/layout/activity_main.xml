@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="com.android.constraintlayoutdemo.MainActivity">
+
+
+        <ImageView
+            android:id="@+id/headerImage_iv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/header_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/banner" />
+
+        <ImageView
+            android:id="@+id/posterImage_iv"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="@dimen/margin_thirty_two"
+            android:contentDescription="@string/poster_image"
+            app:layout_constraintBottom_toBottomOf="@+id/headerImage_iv"
+            app:layout_constraintDimensionRatio="w,2:3"
+            app:layout_constraintStart_toStartOf="@id/leftguide_gl"
+            app:layout_constraintTop_toBottomOf="@+id/headerImage_iv"
+            app:layout_constraintVertical_bias="0.593"
+            app:srcCompat="@drawable/poster" />
+
+        <TextView
+            android:id="@+id/movie_title_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_eight"
+            android:layout_marginStart="@dimen/margin_sixteen"
+            android:layout_marginTop="@dimen/margin_sixteen"
+            android:text="@string/wonder_women"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintEnd_toStartOf="@+id/addplaylist_ib"
+            app:layout_constraintStart_toEndOf="@+id/posterImage_iv"
+            app:layout_constraintTop_toBottomOf="@+id/headerImage_iv" />
+
+        <ImageButton
+            android:id="@+id/addplaylist_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_sixteen"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/play_button"
+            app:layout_constraintEnd_toStartOf="@id/rightguide_gl"
+            app:layout_constraintTop_toBottomOf="@+id/headerImage_iv"
+            app:srcCompat="@drawable/ic_bookmark" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/leftguide_gl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/margin_sixteen" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/rightguide_gl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/margin_sixteen" />
+
+        <TextView
+            android:id="@+id/movie_subtitle_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_eight"
+            android:layout_marginStart="@dimen/margin_sixteen"
+            android:layout_marginTop="@dimen/margin_eight"
+            android:text="@string/march_2017_pg_129_minutes"
+            app:layout_constraintEnd_toStartOf="@+id/rightguide_gl"
+            app:layout_constraintStart_toEndOf="@+id/posterImage_iv"
+            app:layout_constraintTop_toBottomOf="@+id/movie_title_tv" />
+
+        <android.support.constraint.Barrier
+            android:id="@+id/barrier_one_br"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="posterImage_iv,movie_subtitle_tv" />
+
+        <Button
+            android:id="@+id/rent_button_bt"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_sixteen"
+            android:layout_marginStart="@dimen/margin_eight"
+            android:text="@string/rent_for_350"
+            app:layout_constraintEnd_toStartOf="@+id/buy_button_bt"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/leftguide_gl"
+            app:layout_constraintStart_toStartOf="@+id/leftguide_gl"
+            app:layout_constraintTop_toTopOf="@+id/barrier_one_br" />
+
+        <Button
+            android:id="@+id/buy_button_bt"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_eight"
+            android:layout_marginStart="@dimen/margin_sixteen"
+            android:text="@string/buy_from_999"
+            app:layout_constraintEnd_toStartOf="@+id/rightguide_gl"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/rent_button_bt"
+            app:layout_constraintTop_toTopOf="@+id/barrier_one_br" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/rating_bn"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_eight"
+            android:clickable="true"
+            app:backgroundTint="@android:color/background_light"
+            app:layout_constraintEnd_toStartOf="@+id/bookmark_bn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/leftguide_gl"
+            app:layout_constraintTop_toBottomOf="@+id/rent_button_bt"
+            app:srcCompat="@drawable/ic_star" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/bookmark_bn"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_eight"
+            android:clickable="true"
+            app:backgroundTint="@android:color/background_light"
+            app:layout_constraintEnd_toStartOf="@+id/group_bn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/rating_bn"
+            app:layout_constraintTop_toBottomOf="@+id/rent_button_bt"
+            app:srcCompat="@drawable/ic_bookmark" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/group_bn"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="@dimen/margin_eight"
+            android:layout_marginTop="@dimen/margin_eight"
+            android:clickable="true"
+            app:backgroundTint="@android:color/background_light"
+            app:layout_constraintEnd_toStartOf="@+id/share_bn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/bookmark_bn"
+            app:layout_constraintTop_toBottomOf="@+id/buy_button_bt"
+            app:srcCompat="@drawable/ic_group" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/share_bn"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/margin_eight"
+            android:clickable="true"
+            app:backgroundTint="@android:color/background_light"
+            app:layout_constraintEnd_toStartOf="@+id/rightguide_gl"
+            app:layout_constraintStart_toEndOf="@+id/group_bn"
+            app:layout_constraintTop_toBottomOf="@+id/buy_button_bt"
+            app:srcCompat="@drawable/ic_share" />
+
+        <TextView
+            android:id="@+id/rating_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_eight"
+            android:text="@string/rating"
+            app:layout_constraintEnd_toEndOf="@+id/rating_bn"
+            app:layout_constraintStart_toStartOf="@+id/rating_bn"
+            app:layout_constraintTop_toBottomOf="@+id/rating_bn" />
+
+        <TextView
+            android:id="@+id/bookmark_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bookmark"
+            app:layout_constraintEnd_toEndOf="@+id/bookmark_bn"
+            app:layout_constraintStart_toStartOf="@+id/bookmark_bn"
+            app:layout_constraintTop_toBottomOf="@+id/bookmark_bn" />
+
+        <TextView
+            android:id="@+id/group_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/group"
+            app:layout_constraintEnd_toEndOf="@+id/group_bn"
+            app:layout_constraintStart_toStartOf="@+id/group_bn"
+            app:layout_constraintTop_toBottomOf="@+id/group_bn" />
+
+        <TextView
+            android:id="@+id/share_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_eight"
+            android:text="@string/share"
+            app:layout_constraintEnd_toEndOf="@+id/share_bn"
+            app:layout_constraintStart_toStartOf="@+id/share_bn"
+            app:layout_constraintTop_toBottomOf="@+id/share_bn" />
+
+        <android.support.constraint.Barrier
+            android:id="@+id/barrier_two_br"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="group_tv,bookmark_tv,rating_tv,share_tv" />
+
+        <TextView
+            android:id="@+id/movie_desc_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_eight"
+            android:layout_marginEnd="@dimen/margin_eight"
+            android:layout_marginStart="@dimen/margin_eight"
+            android:layout_marginTop="@dimen/margin_sixteen"
+            android:text="@string/movie_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rightguide_gl"
+            app:layout_constraintStart_toStartOf="@+id/leftguide_gl"
+            app:layout_constraintTop_toTopOf="@+id/barrier_two_br" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
